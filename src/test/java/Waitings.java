@@ -23,28 +23,27 @@ public class Waitings {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.get("https://dgotlieb.github.io/Selenium/synchronization.html");
-
     }
 
     @Test (priority = 1)
-    public void removeCheckbox (){
+    public void removeCheckbox (){  // clicks on remove checkbox with implicit wait 10 sec
     driver.findElement(By.id("btn")).click();
     driver.findElement(By.id("message"));
     }
 
     @Test (priority = 2)
-    public void showHidden () throws InterruptedException {
+    public void showHidden () throws InterruptedException { // clicks on hidden and waits 5 sec
         driver.findElement(By.id("hidden")).click();
         Thread.sleep(5000);
         driver.findElement(By.id("finish1"));
     }
 
     @Test (priority = 3)
-    public void render (){
+    public void render (){ // clicks on rendered with explicit wait until located element
         driver.findElement(By.id("rendered")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("finish2")));
     }
-    @AfterClass
+    @AfterClass // closes the browser
     public void close(){
         driver.quit();
     }
