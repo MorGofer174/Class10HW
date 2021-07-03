@@ -1,6 +1,4 @@
 import com.paulhammant.ngwebdriver.ByAngular;
-import com.paulhammant.ngwebdriver.NgWebDriver;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +13,7 @@ public class Angular {
     private static WebElement myName;
 
     @BeforeClass
-    public void runOnceBeforeClass() {
+    public void runOnceBeforeClass() {  // opens chrome browser with URL
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\morg\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
      //   NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
@@ -32,7 +30,7 @@ public class Angular {
     }
 
     @AfterClass
-    public void close(){
+    public void close(){ // closes the browser
         driver.quit();
     }
 

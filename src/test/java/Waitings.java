@@ -16,7 +16,7 @@ public class Waitings {
     private static WebDriverWait wait;
 
     @BeforeClass
-    public void runOnceBeforeClass() {
+    public void runOnceBeforeClass() {  // opens chrome browser with URL
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\morg\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
